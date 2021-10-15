@@ -1,0 +1,23 @@
+namespace: 
+  name: demo
+
+labels:
+  tag: apline
+
+deployment:
+  replicas: 3
+  cpuLimit: 50m
+  memoryLimit: 256Mi
+
+
+image:
+  repository: nginx
+  tag: alpine
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8111
+
+configmap:
+  data: "version: alpine"

@@ -1,0 +1,22 @@
+namespace: 
+  name: staging
+
+labels:
+  tag: apline
+
+deployment:
+  replicas: 1
+  cpuLimit: 50m
+  memoryLimit: 128Mi
+
+image:
+  repository: nginx
+  tag: 1.18.0
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8111
+
+configmap:
+  data: "version: 1.18.0"

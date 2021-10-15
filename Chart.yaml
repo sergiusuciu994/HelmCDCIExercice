@@ -1,0 +1,11 @@
+apiVersion: v1
+name: nginx-deployment 
+description: Install Python HelloWorld (I guess) on Ngninx webserver
+keywords:
+- nginx
+- python
+- helloworld 
+version: 1.1.0
+maintainers:
+- name: Sergiu Suciu 
+  email: sergiu@startsmall.solutions
