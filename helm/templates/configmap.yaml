@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
-  {{ .Values.cm.data }}
+  {{ .Values.configmap.data }}
 kind: ConfigMap
 metadata:
-  name: {{ .Values.cm.data }}
+  name: {{ .Values.configmap.data }}
   namespace: {{ .Values.namespace.name }}
