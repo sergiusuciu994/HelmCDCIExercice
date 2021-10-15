@@ -12,9 +12,6 @@ spec:
     matchLabels:
       app: nginx
       tag: {{ .Values.labels.tag }}
-  limits:
-    cpu: {{ .Values.deployment.cpuLimit }}
-    memory:	 {{ .Values.deployment.memoryLimit }}
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -30,3 +27,7 @@ spec:
       - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.deployment.imagePullPolicy }}
         name: nginx-alpine
+        resources:
+          requests:
+            cpu: {{ .Values.deployment.cpuLimit }}
+            memory: {{ .Values.deployment.memoryLimit }}
