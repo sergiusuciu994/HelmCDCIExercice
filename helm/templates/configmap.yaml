@@ -3,5 +3,5 @@ data:
   {{ .Values.configmap.data }}
 kind: ConfigMap
 metadata:
-  name: {{ .Values.configmap.data }}
+  name: {{ .Values.configmap.data | quote }}
   namespace: {{ .Values.namespace.name }}
